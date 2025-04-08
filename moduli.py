@@ -60,7 +60,7 @@ def Plateaux_plot(x, y, popt=None, function=None, flesso=None, bool_fit=True, bo
     - function: la funzione da plottare
     - flesso: il punto di flesso della funzione
     - plot_settings: dizionario con le impostazioni del plot
-    (title, xlabel, ylabel, xlim)
+      (title, xlabel, ylabel, xlim)
 
     Restituisce:
     - None
@@ -69,7 +69,7 @@ def Plateaux_plot(x, y, popt=None, function=None, flesso=None, bool_fit=True, bo
     x_for_plot = np.linspace(min(x), max(x), 100)   # i valori "continui" di tensione per plottare la funzione
     ax.scatter(x, y, marker='o', color='black', facecolor='none', label='punti sperimentali')   # dati sperimentali
     if bool_fit:
-        ax.plot(x_for_plot, function(x_for_plot, *popt), color='blue', label='Fit con $ax^3 + bx^2 + cx +d$', alpha=0.5) # fit
+        ax.plot(x_for_plot, function(x_for_plot, *popt), color='black', label='Fit con $ax^3 + bx^2 + cx +d$', alpha=0.5) # fit
     if bool_flesso:
         ax.scatter(flesso, function(flesso, *popt), color='red', marker='x', label='Punto di flesso')   # punto di flesso
     ax.set(**plot_settings)    # titolo e label
